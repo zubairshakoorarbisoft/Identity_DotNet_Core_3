@@ -173,6 +173,7 @@ namespace AspNetIdentity.Controllers
         [HttpPost]
         public async Task<IActionResult> AddEditUsersInRole(List<UserRoleViewModel> model, string roleId)
         {
+            var EditRoleFromUserId = TempData["EditRoleFromUserId"];
             IdentityRole role = await _roleManager.FindByIdAsync(roleId);
             if (role == null)
             {
@@ -204,9 +205,24 @@ namespace AspNetIdentity.Controllers
                 if (result.Succeeded && (i < model.Count - 1))
                     continue;
                 else
-                    return RedirectToAction("EditRole", new { id = roleId });
+                {                    
+                    if (EditRoleFromUserId == null)
+                        return RedirectToAction("EditRole", new { id = roleId });
+                    else
+                    {
+                        TempData["EditRoleFromUserId"] = null;
+                        return RedirectToAction("EditUser", new { id = EditRoleFromUserId });
+                    }
+                }
+                    
             }
-            return RedirectToAction("EditRole", new { id = roleId });
+            if (EditRoleFromUserId == null)
+                return RedirectToAction("EditRole", new { id = roleId });
+            else
+            {
+                TempData["EditRoleFromUserId"] = null;
+                return RedirectToAction("EditUser", new { id = EditRoleFromUserId });
+            }
         }
         #endregion
 
@@ -245,33 +261,11 @@ namespace AspNetIdentity.Controllers
             }
             return View(editUser);
         }
-
-        [HttpGet]
-        public async Task<IActionResult> ManageRoles(string userId)
+        public IActionResult ManageRoles(string userId)
         {
-            var user = await _userManager.FindByIdAsync(userId);
-            ViewBag.User = user;
-            if (user == null)
-            {
-                ViewBag.ErrorMessage = $"No User found against this { userId} User Id";
-                return View("NotFound");
-            }
-            //EditUserViewModel editUser = new EditUserViewModel()
-            //{
-            //    Id = user.Id,
-            //    UserName = user.UserName
-            //};
-            //editRole.Users = new List<string>();
-            //foreach (var user in _userManager.Users)
-            //{
-            //    if (await _userManager.IsInRoleAsync(user, role.Name))
-            //    {
-            //        editRole.Users.Add(user.UserName);
-            //    }
-            //}
-            return View();
+            TempData["EditRoleFromUserId"] = userId;
+            return View("RolesList", _roleManager.Roles);
         }
-
         [HttpGet]
         public async Task<IActionResult> ManageClaims(string userId)
         {
@@ -335,6 +329,7 @@ namespace AspNetIdentity.Controllers
 
             return RedirectToAction("EditUser", new { id = model.UserId});
         }
+        
         #endregion
     }
 
