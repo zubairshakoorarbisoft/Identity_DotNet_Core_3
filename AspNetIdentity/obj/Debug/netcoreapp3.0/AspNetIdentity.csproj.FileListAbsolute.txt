@@ -135,3 +135,14 @@ D:\DotNet\AspNetIdentity\AspNetIdentity\bin\Debug\netcoreapp3.0\AspNetIdentity.p
 D:\DotNet\AspNetIdentity\AspNetIdentity\bin\Debug\netcoreapp3.0\AspNetIdentity.Views.pdb
 D:\DotNet\AspNetIdentity\AspNetIdentity\obj\Debug\netcoreapp3.0\AspNetIdentity.Views.pdb
 D:\DotNet\AspNetIdentity\AspNetIdentity\obj\Debug\netcoreapp3.0\AspNetIdentity.pdb
+D:\DotNet\AspNetIdentity\AspNetIdentity\obj\Debug\netcoreapp3.0\Razor\Views\Administration\RolesList.cshtml.g.cs
+D:\DotNet\AspNetIdentity\AspNetIdentity\obj\Debug\netcoreapp3.0\Razor\Views\Administration\EditRole.cshtml.g.cs
+D:\DotNet\AspNetIdentity\AspNetIdentity\obj\Debug\netcoreapp3.0\Razor\Views\Shared\NotFound.cshtml.g.cs
+D:\DotNet\AspNetIdentity\AspNetIdentity\obj\Debug\netcoreapp3.0\Razor\Views\Administration\AddEditUsersInRole.cshtml.g.cs
+D:\DotNet\AspNetIdentity\AspNetIdentity\obj\Debug\netcoreapp3.0\Razor\Views\Cashier\Index.cshtml.g.cs
+D:\DotNet\AspNetIdentity\AspNetIdentity\obj\Debug\netcoreapp3.0\Razor\Views\Student\Index.cshtml.g.cs
+D:\DotNet\AspNetIdentity\AspNetIdentity\obj\Debug\netcoreapp3.0\Razor\Views\Teacher\Index.cshtml.g.cs
+D:\DotNet\AspNetIdentity\AspNetIdentity\obj\Debug\netcoreapp3.0\Razor\Views\Administration\UsersList.cshtml.g.cs
+D:\DotNet\AspNetIdentity\AspNetIdentity\obj\Debug\netcoreapp3.0\Razor\Views\Administration\EditUser.cshtml.g.cs
+D:\DotNet\AspNetIdentity\AspNetIdentity\obj\Debug\netcoreapp3.0\Razor\Views\Administration\ManageRoles.cshtml.g.cs
+D:\DotNet\AspNetIdentity\AspNetIdentity\obj\Debug\netcoreapp3.0\Razor\Views\Administration\ManageClaims.cshtml.g.cs

@@ -45,6 +45,19 @@ namespace AspNetIdentity
 
 
 
+            // Adding Claims based authentication Policies
+            services.AddAuthorization(options => {
+                
+                options.AddPolicy("CreateRolePolicy",
+                    policy => policy.RequireClaim("Create Role"));
+                
+                options.AddPolicy("EditRolePolicy",
+                    policy => policy.RequireClaim("Edit Role"));
+
+                options.AddPolicy("DeleteRolePolicy",
+                    policy => policy.RequireClaim("Delete Role"));
+
+            });
 
             services.AddRazorPages();
         }
