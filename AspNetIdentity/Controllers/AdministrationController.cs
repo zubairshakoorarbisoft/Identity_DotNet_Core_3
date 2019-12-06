@@ -43,7 +43,7 @@ namespace AspNetIdentity.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateRole(CreateRoleViewModel model)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && model != null)
             {
                 IdentityRole role = new IdentityRole()
                 {
